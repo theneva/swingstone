@@ -34,7 +34,12 @@ public class GamePresenter
         final Opponent opponent = createRandomOpponent();
 
         this.game = new Game(player, opponent);
-        this.gameView = viewFactory.createGameView(game, game::nextTurn, game::playMinion);
+        this.gameView = viewFactory.createGameView(
+                game,
+                game::nextTurn,
+                game::playMinion,
+                game::handleAttack
+        );
     }
 
     public void startGame()

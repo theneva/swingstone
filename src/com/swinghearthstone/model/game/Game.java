@@ -48,4 +48,9 @@ public class Game
     {
         return activeHero;
     }
+
+    public void handleAttack(final Minion attacker, final Hero target)
+    {
+        target.takeDamage(attacker.attack);
+    }
 }
