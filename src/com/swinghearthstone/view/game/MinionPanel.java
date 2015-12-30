@@ -5,7 +5,7 @@ import com.swinghearthstone.model.game.minion.Minion;
 import javax.swing.*;
 import java.awt.*;
 
-public abstract class MinionPanel extends GamePanel implements Activatable
+public class MinionPanel extends GamePanel implements Activatable
 {
     private final Minion minion;
 
@@ -44,5 +44,17 @@ public abstract class MinionPanel extends GamePanel implements Activatable
         costIndicator.setText("" + minion.cost);
         attackIndicator.setText("" + minion.attack);
         healthIndicator.setText("" + minion.health);
+    }
+
+    @Override
+    public void setActive()
+    {
+        setBorder(BorderFactory.createLineBorder(Color.GREEN));
+    }
+
+    @Override
+    public void setInactive()
+    {
+        setBorder(BorderFactory.createLineBorder(Color.GRAY));
     }
 }

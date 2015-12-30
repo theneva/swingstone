@@ -24,9 +24,9 @@ public class MinionBoardPanel extends GamePanel
         removeAll();
 
         minions.stream()
-                .map(MinionOnBoardPanel::new)
-                .peek(MinionOnBoardPanel::setActive)
-                .peek(MinionOnBoardPanel::render)
+                .map(MinionPanel::new)
+                .peek(MinionPanel::setActive)
+                .peek(MinionPanel::render)
                 .forEach(this::add);
 
         revalidate();

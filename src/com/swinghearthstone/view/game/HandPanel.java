@@ -27,22 +27,22 @@ public class HandPanel extends GamePanel implements Activatable
         removeAll();
 
         hand.minions.stream()
-                .map(this::createMinionInHandPanelWithMouseClickListener)
+                .map(this::createMinionPanelWithMouseClickListener)
                 .peek(this::toggleActive)
-                .peek(MinionInHandPanel::render)
+                .peek(MinionPanel::render)
                 .forEach(this::add);
 
         revalidate();
     }
 
-    private MinionInHandPanel createMinionInHandPanelWithMouseClickListener(final Minion minion)
+    private MinionPanel createMinionPanelWithMouseClickListener(final Minion minion)
     {
-        final MinionInHandPanel panel = new MinionInHandPanel(minion);
+        final MinionPanel panel = new MinionPanel(minion);
         panel.addMouseListener((MouseClickListener) e -> minionPlayedCallback.apply(minion));
         return panel;
     }
 
-    private void toggleActive(final MinionInHandPanel panel)
+    private void toggleActive(final MinionPanel panel)
     {
         if (active)
         {
