@@ -1,8 +1,8 @@
 package com.swinghearthstone.presenter.game;
 
 import com.swinghearthstone.MinionRepository;
-import com.swinghearthstone.model.game.hero.Deck;
 import com.swinghearthstone.model.game.Game;
+import com.swinghearthstone.model.game.hero.Deck;
 import com.swinghearthstone.model.game.hero.Hand;
 import com.swinghearthstone.model.game.hero.Opponent;
 import com.swinghearthstone.model.game.hero.Player;

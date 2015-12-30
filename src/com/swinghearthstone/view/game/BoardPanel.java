@@ -28,10 +28,6 @@ public class BoardPanel extends GamePanel
         add(nextTurnButton, BorderLayout.SOUTH);
     }
 
-    public BoardPanel(final Player player, final Opponent opponent, final Object triggerNextTurn, final Object triggerMinionAttackedHero)
-    {
-    }
-
     private JPanel createMinionBoardContainer(final Player player, final Opponent opponent, final MinionAttackedHeroCallback minionAttackedHeroCallback)
     {
         final JPanel minionBoardContainer = new JPanel(new GridLayout(2, 1));
