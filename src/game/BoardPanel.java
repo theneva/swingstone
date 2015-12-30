@@ -6,7 +6,7 @@ import game.actor.Player;
 import javax.swing.*;
 import java.awt.*;
 
-public class BoardPanel extends JPanel implements Renderable
+public class BoardPanel extends GamePanel
 {
     public BoardPanel(final Player player, final Opponent opponent, final Callback nextTurnCallback)
     {

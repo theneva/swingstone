@@ -5,7 +5,7 @@ import java.awt.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class HandPanel extends JPanel implements Renderable
+public class HandPanel extends GamePanel implements Activatable
 {
     private final List<MinionPanel> minionPanels;
 
@@ -27,11 +27,13 @@ public class HandPanel extends JPanel implements Renderable
         minionPanels.forEach(MinionPanel::render);
     }
 
+    @Override
     public void setActive()
     {
         minionPanels.forEach(MinionPanel::setActive);
     }
 
+    @Override
     public void setInactive()
     {
         minionPanels.forEach(MinionPanel::setInactive);

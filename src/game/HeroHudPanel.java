@@ -5,7 +5,7 @@ import game.actor.Hero;
 import javax.swing.*;
 import java.awt.*;
 
-public class HeroHudPanel extends JPanel implements Renderable
+public class HeroHudPanel extends GamePanel
 {
     private final Hero hero;
 

@@ -5,7 +5,7 @@ import game.actor.Minion;
 import javax.swing.*;
 import java.awt.*;
 
-public class MinionPanel extends JPanel implements Renderable
+public class MinionPanel extends GamePanel implements Activatable
 {
     private final Minion minion;
 
@@ -51,11 +51,13 @@ public class MinionPanel extends JPanel implements Renderable
         healthIndicator.setText("" + minion.health);
     }
 
+    @Override
     public void setActive()
     {
         playButton.setEnabled(true);
     }
 
+    @Override
     public void setInactive()
     {
         playButton.setEnabled(false);
