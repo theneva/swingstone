@@ -1,6 +1,7 @@
 package com.swinghearthstone;
 
 import com.swinghearthstone.presenter.game.GamePresenter;
+import com.swinghearthstone.view.SwingViewFactory;
 
 public class GameStarter
 {

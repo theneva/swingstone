@@ -1,4 +1,4 @@
-package com.swinghearthstone;
+package com.swinghearthstone.view;
 
 import com.swinghearthstone.model.game.Game;
 import com.swinghearthstone.model.game.MinionPlayedCallback;

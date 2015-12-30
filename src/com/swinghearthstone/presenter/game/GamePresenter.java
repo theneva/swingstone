@@ -1,7 +1,7 @@
 package com.swinghearthstone.presenter.game;
 
 import com.swinghearthstone.MinionRepository;
-import com.swinghearthstone.ViewFactory;
+import com.swinghearthstone.view.ViewFactory;
 import com.swinghearthstone.model.game.Deck;
 import com.swinghearthstone.model.game.Game;
 import com.swinghearthstone.model.game.Hand;
