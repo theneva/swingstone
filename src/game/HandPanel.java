@@ -1,0 +1,39 @@
+package game;
+
+import javax.swing.*;
+import java.awt.*;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class HandPanel extends JPanel implements Renderable
+{
+    private final List<MinionPanel> minionPanels;
+
+    public HandPanel(final Hand hand, final MinionPlayedCallback minionPlayedCallback)
+    {
+        super(new GridLayout(1, 10));
+
+        // TODO support dynamic max hand size
+        this.minionPanels = hand.minions.stream()
+                .map(minion -> new MinionPanel(minion, minionPlayedCallback))
+                .peek(panel -> panel.setBorder(BorderFactory.createLineBorder(Color.RED, 2, true)))
+                .peek(this::add)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public void render()
+    {
+        minionPanels.forEach(MinionPanel::render);
+    }
+
+    public void setActive()
+    {
+        minionPanels.forEach(MinionPanel::setActive);
+    }
+
+    public void setInactive()
+    {
+        minionPanels.forEach(MinionPanel::setInactive);
+    }
+}

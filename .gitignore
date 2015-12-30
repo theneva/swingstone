@@ -1,0 +1,15 @@
+# IntelliJ
+.idea/
+out/
+*.iml
+
+# Java
+*.class
+*.jar
+
+# OSX
+.DS_Store
+
+# VIM
+*.swo
+*.swp
