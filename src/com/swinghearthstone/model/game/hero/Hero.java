@@ -21,6 +21,12 @@ public abstract class Hero
         this.minions = minions;
     }
 
+    public void playMinion(final Minion minion)
+    {
+        this.hand.play(minion);
+        this.minions.add(minion);
+    }
+
     public void takeDamage(final int damage)
     {
         health -= damage;

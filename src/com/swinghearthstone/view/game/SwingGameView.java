@@ -60,7 +60,10 @@ public class SwingGameView extends JFrame implements GameView
     private void triggerMinionPlayed(final Minion minion)
     {
         System.out.println("triggerMinionPlayed");
+
         minionPlayedCallback.apply(minion);
+
+        render();
     }
 
     private void resetListeners()

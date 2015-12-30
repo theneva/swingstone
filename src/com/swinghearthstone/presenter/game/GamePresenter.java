@@ -51,6 +51,8 @@ public class GamePresenter
         final List<Minion> cardsInHand = ArrayHelper.asList(
                 // TODO Handle fatigue in opening hand?
                 deck.draw().get(),
+                deck.draw().get(),
+                deck.draw().get(),
                 deck.draw().get()
         );
 

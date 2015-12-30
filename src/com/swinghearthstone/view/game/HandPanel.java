@@ -3,42 +3,54 @@ package com.swinghearthstone.view.game;
 import com.swinghearthstone.model.game.Hand;
 import com.swinghearthstone.model.game.MinionPlayedCallback;
 
-import javax.swing.*;
 import java.awt.*;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class HandPanel extends GamePanel implements Activatable
 {
-    private final List<MinionPanel> minionPanels;
+    private final Hand hand;
+    private final MinionPlayedCallback minionPlayedCallback;
+    private boolean active = true;
 
     public HandPanel(final Hand hand, final MinionPlayedCallback minionPlayedCallback)
     {
         super(new GridLayout(1, 10));
 
-        // TODO support dynamic max hand size
-        this.minionPanels = hand.minions.stream()
-                .map(minion -> new MinionPanel(minion, minionPlayedCallback))
-                .peek(panel -> panel.setBorder(BorderFactory.createLineBorder(Color.RED, 2, true)))
-                .peek(this::add)
-                .collect(Collectors.toList());
+        this.hand = hand;
+        this.minionPlayedCallback = minionPlayedCallback;
     }
 
     @Override
     public void render()
     {
-        minionPanels.forEach(MinionPanel::render);
+        removeAll();
+
+        hand.minions.stream()
+                .map(minion -> new MinionInHandPanel(minion, minionPlayedCallback))
+                .peek(panel -> {
+                    if (active)
+                    {
+                        panel.setActive();
+                    }
+                    else
+                    {
+                        panel.setInactive();
+                    }
+                })
+                .peek(MinionInHandPanel::render)
+                .forEach(this::add);
+
+        revalidate();
     }
 
     @Override
     public void setActive()
     {
-        minionPanels.forEach(MinionPanel::setActive);
+        active = true;
     }
 
     @Override
     public void setInactive()
     {
-        minionPanels.forEach(MinionPanel::setInactive);
+        active = false;
     }
 }

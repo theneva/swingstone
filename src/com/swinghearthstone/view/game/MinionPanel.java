@@ -1,12 +1,11 @@
 package com.swinghearthstone.view.game;
 
-import com.swinghearthstone.model.game.MinionPlayedCallback;
 import com.swinghearthstone.model.game.minion.Minion;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class MinionPanel extends GamePanel implements Activatable
+public abstract class MinionPanel extends GamePanel implements Activatable
 {
     private final Minion minion;
 
@@ -15,9 +14,7 @@ public class MinionPanel extends GamePanel implements Activatable
     private final JLabel attackIndicator = new JLabel();
     private final JLabel healthIndicator = new JLabel();
 
-    private final JButton playButton = new JButton("Play");
-
-    public MinionPanel(final Minion minion, final MinionPlayedCallback minionPlayedCallback)
+    public MinionPanel(final Minion minion)
     {
         super(new BorderLayout());
 
@@ -37,10 +34,7 @@ public class MinionPanel extends GamePanel implements Activatable
         minionDataPanel.add(new JLabel("Health"));
         minionDataPanel.add(healthIndicator);
 
-        playButton.addActionListener(e -> minionPlayedCallback.apply(minion));
-
         add(minionDataPanel);
-        add(playButton, BorderLayout.SOUTH);
     }
 
     @Override
@@ -50,17 +44,5 @@ public class MinionPanel extends GamePanel implements Activatable
         costIndicator.setText("" + minion.cost);
         attackIndicator.setText("" + minion.attack);
         healthIndicator.setText("" + minion.health);
-    }
-
-    @Override
-    public void setActive()
-    {
-        playButton.setEnabled(true);
-    }
-
-    @Override
-    public void setInactive()
-    {
-        playButton.setEnabled(false);
     }
 }
