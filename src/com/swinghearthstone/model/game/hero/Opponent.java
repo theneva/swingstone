@@ -1,7 +1,5 @@
 package com.swinghearthstone.model.game.hero;
 
-import com.swinghearthstone.model.game.Deck;
-import com.swinghearthstone.model.game.Hand;
 import com.swinghearthstone.model.game.minion.Minion;
 
 import java.util.List;

@@ -1,6 +1,6 @@
 package com.swinghearthstone.view.game;
 
-import com.swinghearthstone.model.game.Hand;
+import com.swinghearthstone.model.game.hero.Hand;
 import com.swinghearthstone.model.game.MinionPlayedCallback;
 import com.swinghearthstone.model.game.minion.Minion;
 import com.swinghearthstone.view.util.MouseClickListener;

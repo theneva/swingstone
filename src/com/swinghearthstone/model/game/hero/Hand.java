@@ -1,4 +1,4 @@
-package com.swinghearthstone.model.game;
+package com.swinghearthstone.model.game.hero;
 
 import com.swinghearthstone.model.game.minion.Minion;
 
