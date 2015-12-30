@@ -1,7 +1,6 @@
 package com.swinghearthstone.presenter.game;
 
 import com.swinghearthstone.MinionRepository;
-import com.swinghearthstone.view.ViewFactory;
 import com.swinghearthstone.model.game.Deck;
 import com.swinghearthstone.model.game.Game;
 import com.swinghearthstone.model.game.Hand;
@@ -9,6 +8,7 @@ import com.swinghearthstone.model.game.hero.Opponent;
 import com.swinghearthstone.model.game.hero.Player;
 import com.swinghearthstone.model.game.minion.Minion;
 import com.swinghearthstone.util.ArrayHelper;
+import com.swinghearthstone.view.ViewFactory;
 import com.swinghearthstone.view.game.GameView;
 
 import java.util.ArrayList;
